@@ -3,7 +3,7 @@
 <!-- define angular app -->
 <html ng-app="hockeyApp">
 
-<head>
+<head title="Hockey App">
   <!-- Styles -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
@@ -19,10 +19,24 @@
  <div class="header" id="header">
      <h1 class="text-center" id="header-text"><a href="/#!/" class="homebtn">HOCKEY PLAYERS &nbsp;&nbsp;0</a></h1>
  </div>
- <div class="container">
+ <div class="col-lg-12">
+ <button class="btn" onclick="showForm()">Add a player</button>
+ <form name="formy" id="formy" style="width:50%; margin: auto; margin-bottom:10px;display:none;">
+     <input type="text" class="form-control" placeholder="Name" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Team" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Draft" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Birthday" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Birthplace" style="margin-bottom:10px;" required>
+     <input ng-disabled="formyd.$invalid" type="submit" class="btn" value="Add Player">
+
+ </form>
+ </div>
+ 
+ 
+ 
+<div class="container">
   <div class="col-xs-3">
-            <!-- required for floating -->
-            <!-- Nav tabs -->
+           
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="/#!/about/1" class="nav-links h3">Sidney Crosby</a></li>
                 <li><a href="/#!/about/2" class="nav-links h3">Erik Karlsson</a></li>
@@ -36,17 +50,37 @@
   </div>
     </div>
     </div>
-  <div class="">
+ 
+ <section>
+     <h3>New</h3>
+     <ul>
+         <li></li>
+     </ul>
+ </section>
+ 
+ 
   <footer>
      <h4 class="text-center" id="footer-text">AN APP BY EMILY BLANCHETT</h4>
 
   </footer>
-  </div>
+  
   
   
    <!-- Scripts -->
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script>
+function showForm() {
+    var x = document.getElementById('formy');
+    if (x.style.display === 'block') {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'block';
+    }
+}
+</script>
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
