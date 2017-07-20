@@ -1,0 +1,11 @@
+<div class="jumbotron text-center">
+<img ng-src="{{player.img}}" width="250px;" height="250px;">
+<h2> <strong>{{player.firstName}} {{player.lastName}}</strong></h2>
+	<p><strong>Team:</strong>{{player.team}}</p>
+	<p><strong>Draft:</strong> {{player.draft}}</p>
+	<p><strong>Born:</strong> {{player.born}}</p>
+	<p><strong>Shoots:</strong> {{player.shoots}}</p>
+	<p><strong>Birthplace:</strong> {{player.birthplace}}</p>
+</div>
+<a ng-class="{ 'disabled' : itemID >= 3 }" href="/#!/about/{{+itemID + 1}}" class="btn btn-lg pull-right theButtons">Next</a>
+<a ng-class="{ 'disabled' : itemID <= 1 }" href="/#!/about/{{+itemID - 1}}" class="btn btn-lg pull-left theButtons">Back</a>

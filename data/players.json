@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "firstName": "Sidney",
+    "lastName": "Crosby",
+    "team": "Pittsburgh Penguins",
+      
+    "draft": "2005 PIT, 1st rd, 1st pk (1st overall)",
+      "img": "../img/sid.jpg",
+      "born": "August 7, 1987",
+      "shoots": "Left",
+      "birthplace": "Cole Harbour, NS, CAN"
+      
+  },
+  {
+    "id": "2",
+    "firstName": "Erik",
+    "lastName": "Karlsson",
+    "team": "Ottawa Senators",
+   
+    "draft": "2008 OTT, 1st rd, 15th pk (15th overall)",
+      "img": "../img/erik.jpg",
+      "born": "May 31, 1990",
+      "shoots": "Right",
+      "birthplace": "Landsbro, SWE"
+  },
+  {
+    "id": "3",
+    "firstName": "Connor",
+    "lastName": "McDavid",
+    "team": "Edmonton Oilers",
+    
+    "draft": "2015 EDM, 1st rd, 1st pk (1st overall)",
+      "img": "../img/con.jpg",
+      "born": "January 13, 1997",
+      "shoots": "Left",
+      "birthplace": "Richmond Hill, ON, CAN"
+  }
+]
