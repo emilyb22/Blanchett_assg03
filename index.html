@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!-- define angular app -->
-<html ng-app="hockeyApp">
+<html>
 
 <head title="Hockey App">
   <!-- Styles -->
@@ -14,25 +14,49 @@
 </head>
 
 <!-- define angular controller -->
-<body >
+<body ng-app="hockeyApp">
+<main>
+<div ng-controller="hockeyCtrl" class="container">
 
  <div class="header" id="header">
      <h1 class="text-center" id="header-text"><a href="/#!/" class="homebtn">HOCKEY PLAYERS &nbsp;&nbsp;0</a></h1>
  </div>
  <div class="col-lg-12">
  <button class="btn" onclick="showForm()">Add a player</button>
- <form name="formy" id="formy" style="width:50%; margin: auto; margin-bottom:10px;display:none;">
-     <input type="text" class="form-control" placeholder="Name" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Team" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Draft" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Birthday" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Birthplace" style="margin-bottom:10px;" required>
-     <input ng-disabled="formyd.$invalid" type="submit" class="btn" value="Add Player">
+ <form name="formy" ng-submit="addPlayer()" id="formy" style="width:50%; margin: auto; margin-bottom:10px;display:none;" >
+     <input type="text" class="form-control" placeholder="Name" ng-model="newPlayer.name" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Team" ng-model="newPlayer.team" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Draft" ng-model="newPlayer.draft" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Birthday" ng-model="newPlayer.birthday" style="margin-bottom:10px;" required>
+     <input type="text" class="form-control" placeholder="Birthplace" ng-model="newPlayer.birthplace" style="margin-bottom:10px;" required>
+     <input ng-disabled="formy.$invalid" type="submit" value="Add" class="btn"> </form>
 
- </form>
+ 
  </div>
  
  
+ 
+ 
+ 
+ <section>
+     <h3>New</h3>
+     <ul>
+         <li ng-repeat="player in playersList track by player.$id">
+             <form name="formy_edit">
+             <input type="text" ng-model="player.name">
+             <input type="text" ng-model="player.team">
+             <input type="text" ng-model="player.draft">
+            <input type="text" ng-model="player.birthday">
+            <input type="text" ng-model="player.birthplace">
+            
+             <button class="btn" ng-click="savePlayer(player)">Save</button> 
+             <button class="btn" ng-click="removePlayer(player)">Delete</button>
+            
+
+             </form>
+         </li>
+     </ul>
+ </section>
  
 <div class="container">
   <div class="col-xs-3">
@@ -51,20 +75,15 @@
     </div>
     </div>
  
- <section>
-     <h3>New</h3>
-     <ul>
-         <li></li>
-     </ul>
- </section>
+ 
  
  
   <footer>
      <h4 class="text-center" id="footer-text">AN APP BY EMILY BLANCHETT</h4>
 
   </footer>
-  
-  
+  </div>
+  </main>
   
    <!-- Scripts -->
     <script>
@@ -78,9 +97,15 @@ function showForm() {
 }
 </script>
     
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
-   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-  <script src="script.js"></script>
+      <!--Load Angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <!--Load firebase-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <!--Load Angularfire-->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!--Load our app-->
+    <script src="angularfire.js"></script>
+   
+
 </body>
 </html>
