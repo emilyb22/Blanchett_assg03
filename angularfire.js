@@ -1,5 +1,36 @@
 angular
-	.module('hockeyApp', ['firebase'])
+	.module("hockeyApp", ['firebase', 'ngRoute'])
+	.config(function ($routeProvider, $locationProvider) {
+	$routeProvider
+			.when('/about/:itemID', {
+				templateUrl : 'pages/about.html',
+				controller  : 'hockeyCtrl'
+			})
+        .when('/', {
+				templateUrl : 'pages/placeholder.html',
+                controller: 'placeholderCtrl'
+				
+			})
+    
+    .when('/show-all', {
+        templateUrl: 'pages/all.html',
+        controller: 'AllDetailsCtrl'
+      })
+    
+	})
+
+	.controller('AllDetailsCtrl', function($scope, $routeParams) {
+    $scope.itemID = $routeParams.itemID
+    $scope.showAll = true
+	
+  }) 
+
+.controller('hockeyCtrl', function ($scope, $routeParams, $firebaseObject) {
+const dbRef = firebase.database().ref().child('players')
+$scope.player = $firebaseObject(dbRef.child($routeParams.itemID))
+})
+
+
     .constant('firebaseConfig', {
         apiKey: "AIzaSyDma2d0IC9vGyhu8zTNBHo0M6sMx-Zrs0k",
     authDomain: "hockey-app-f0b7c.firebaseapp.com",
@@ -8,7 +39,10 @@ angular
     storageBucket: "",
     messagingSenderId: "1017524189091"
 })
+    
+    
 .run(firebaseConfig => firebase.initializeApp(firebaseConfig))
+    
 .controller('hockeyCtrl', function($scope, $firebaseObject, $firebaseArray){
 	const dbRef = firebase.database().ref().child('players')
     
@@ -41,5 +75,7 @@ angular
     
     
 })
+    
+    	
 
 
