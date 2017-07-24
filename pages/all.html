@@ -1,0 +1,20 @@
+ <section>
+     <h3>New</h3>
+     <ul>
+         <li ng-repeat="player in playersList track by player.$id">
+             <form name="formy_edit">
+             <input type="text" ng-model="player.name">
+             <input type="text" ng-model="player.team">
+             <input type="text" ng-model="player.draft">
+            <input type="text" ng-model="player.birthday">
+            <input type="text" ng-model="player.birthplace">
+            <span class="store-address">{{player.$id}}</span>
+            
+             <button class="btn" ng-click="savePlayer(player)">Save</button> 
+             <button class="btn" ng-click="removePlayer(player)">Delete</button>
+            
+
+             </form>
+         </li>
+     </ul>
+ </section>
