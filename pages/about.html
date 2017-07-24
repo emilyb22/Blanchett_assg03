@@ -1,11 +1,19 @@
-<div class="jumbotron text-center">
-<img ng-src="{{player.img}}" width="250px;" height="250px;">
-<h2> <strong>{{player.firstName}} {{player.lastName}}</strong></h2>
-	<p><strong>Team:</strong>{{player.team}}</p>
-	<p><strong>Draft:</strong> {{player.draft}}</p>
-	<p><strong>Born:</strong> {{player.born}}</p>
-	<p><strong>Shoots:</strong> {{player.shoots}}</p>
-	<p><strong>Birthplace:</strong> {{player.birthplace}}</p>
-</div>
-<a ng-class="{ 'disabled' : itemID >= 3 }" href="/#!/about/{{+itemID + 1}}" class="btn btn-lg pull-right theButtons">Next</a>
-<a ng-class="{ 'disabled' : itemID <= 1 }" href="/#!/about/{{+itemID - 1}}" class="btn btn-lg pull-left theButtons">Back</a>
+   <ul>
+         <li ng-repeat="player in playersList track by player.$id">
+             <form name="formy_edit">
+             <input type="text" ng-model="player.name">
+             <input type="text" ng-model="player.team">
+             <input type="text" ng-model="player.draft">
+            <input type="text" ng-model="player.birthday">
+            <input type="text" ng-model="player.birthplace">
+            <span class="store-address">{{player.$id}}</span>
+            
+             <button class="btn" ng-click="savePlayer(player)">Save</button> 
+             <button class="btn" ng-click="removePlayer(player)">Delete</button>
+            
+
+             </form>
+         </li>
+     </ul>
+<!--<a ng-class="{ 'disabled' : itemID >= 3 }" href="/#!/about/{{+itemID + 1}}" class="btn btn-lg pull-right theButtons">Next</a>
+<a ng-class="{ 'disabled' : itemID <= 1 }" href="/#!/about/{{+itemID - 1}}" class="btn btn-lg pull-left theButtons">Back</a>-->

@@ -1,5 +1,5 @@
 
-	var hockeyApp = angular.module('hockeyApp', ['ngRoute']);
+	var hockeyAppRoute = angular.module('hockeyAppRoute', ['ngRoute']);
 
 	// configure our routes
 	hockeyApp.config(function($routeProvider) {
@@ -14,20 +14,4 @@
 			})
 
 	})
-    
-    
-
-	 hockeyApp.controller('PlayersCtrl', function($scope, $routeParams, $http) {
-
-    $scope.itemID = $routeParams.itemID
-
-    $http
-      .get('/data/players.json')
-      .then(function(res){
-        $scope.player = res.data.filter(function(row) {
-          return row.id === $scope.itemID 
-        })[0]
-        console.log($scope.player)
-      })
-
-  })
+ 
