@@ -1,18 +1,22 @@
  <section>
-     <h3>New</h3>
+     <h3>All Players</h3>
      <ul>
          <li ng-repeat="player in playersList track by player.$id">
-             <form name="formy_edit">
-             <input type="text" ng-model="player.name">
-             <input type="text" ng-model="player.team">
-             <input type="text" ng-model="player.draft">
-            <input type="text" ng-model="player.birthday">
-            <input type="text" ng-model="player.birthplace">
-            <span class="store-address">{{player.$id}}</span>
-            
+             <form name="formy_edit" class="edit_form">
+             <label>Name</label>
+             <input class="contact_input_body" type="text" ng-model="player.name">
+             <label>Team</label>
+             <input class="contact_input_body" type="text" ng-model="player.team">
+             <label>Draft Year</label>
+             <input class="contact_input_body" type="text" ng-model="player.draft">
+             <label>Birthday</label>
+            <input class="contact_input_body" type="text" ng-model="player.birthday">
+            <label>Birthplace</label>
+            <input class="contact_input_body" type="text" ng-model="player.birthplace">
+            <br>
              <button class="btn" ng-click="savePlayer(player)">Save</button> 
              <button class="btn" ng-click="removePlayer(player)">Delete</button>
-            
+            <br><br>
 
              </form>
          </li>

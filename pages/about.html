@@ -1,6 +1,6 @@
  <section ng-controller="hockeyCtrl">
      <h3>New</h3>
-             <form name="formy_edit">
+             <form name="formy_edit" class="edit_form">
              <input class="contact_input_body" type="text" ng-model="player.name">
              <input class="contact_input_body" type="text" ng-model="player.team">
              <input class="contact_input_body" type="text" ng-model="player.draft">
@@ -11,8 +11,7 @@
             <br>
              <button class="btn" ng-click="savePlayer(player)">Save</button> 
              <button class="btn" ng-click="removePlayer(player)">Delete</button>
-            
-
+             
              </form>
         
  </section>

@@ -14,12 +14,12 @@ angular
     
     .when('/show-all', {
         templateUrl: 'pages/all.html',
-        controller: 'AllDetailsCtrl'
+        controller: 'AllPlayersCtrl'
       })
     
 	})
 
-	.controller('AllDetailsCtrl', function($scope, $routeParams) {
+	.controller('AllPlayersCtrl', function($scope, $routeParams) {
     $scope.itemID = $routeParams.itemID
     $scope.showAll = true
 	
