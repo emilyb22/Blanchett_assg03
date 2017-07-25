@@ -1,20 +1,20 @@
  <section ng-controller="hockeyCtrl" >
      <h3>New</h3>
-             <form name="formy_edit" class="edit_form">
-             <input class="contact_input_body" type="text" ng-model="player.name">
-             <input class="contact_input_body" type="text" ng-model="player.team">
-             <input class="contact_input_body" type="text" ng-model="player.draft">
-            <input class="contact_input_body" type="text" ng-model="player.birthday">
-            <input class="contact_input_body" type="text" ng-model="player.birthplace">
-            <span class="store-address">{{player.$id}}</span>
-
-            <br>
-             <button class="btn" ng-click="savePlayer(player)">Save</button> 
-             <button class="btn" ng-click="removePlayer(player)">Delete</button>
-             
-             </form>
+               <form name="formy_edit" class="edit_form">
+                <label>Name</label>
+                <input class="contact_input_body" type="text" ng-model="player.name">
+                <label>Team</label>
+                <input class="contact_input_body" type="text" ng-model="player.team">
+                <label>Draft Year</label>
+                <input class="contact_input_body" type="text" ng-model="player.draft">
+                <label>Birthday</label>
+                <input class="contact_input_body" type="text" ng-model="player.birthday">
+                <label>Birthplace</label>
+                <input class="contact_input_body" type="text" ng-model="player.birthplace">
+                <br>
+                <button class="btn" ng-click="player.$save()">Save</button> 
+                <button class="btn" ng-click="removePlayer(player)">Delete</button>
+                <br>
+                <br> </form>
         
  </section>
-
-<!--<a ng-class="{ 'disabled' : itemID >= 3 }" href="/#!/about/{{+itemID + 1}}" class="btn btn-lg pull-right theButtons">Next</a>
-<a ng-class="{ 'disabled' : itemID <= 1 }" href="/#!/about/{{+itemID - 1}}" class="btn btn-lg pull-left theButtons">Back</a>-->

@@ -22,19 +22,7 @@
      <h1 class="text-center" id="header-text"><a href="/#!/" class="homebtn">HOCKEY PLAYERS &nbsp;&nbsp;0</a></h1>
  </div>
  <div class="col-lg-12">
- <button class="btn" onclick="showForm()">Add a player</button>
-
-
- <form name="formy" ng-submit="addPlayer()" id="formy" style="width:50%; margin: auto; margin-bottom:10px;display:none;" >
-     <input type="text" class="form-control" placeholder="Name" ng-model="newPlayer.name" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Team" ng-model="newPlayer.team" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Draft" ng-model="newPlayer.draft" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Birthday" ng-model="newPlayer.birthday" style="margin-bottom:10px;" required>
-     <input type="text" class="form-control" placeholder="Birthplace" ng-model="newPlayer.birthplace" style="margin-bottom:10px;" required>
-     <input ng-disabled="formy.$invalid" type="submit" value="Add" class="btn"> </form>
-
- 
- </div>
+<a href="/#!/createPlayer" class="btn">Add a player</a> </div>
 
  
 <div class="container">
@@ -55,25 +43,15 @@
   </div>
     </div>
     </div>
-  <div class="">
+
   <footer>
      <h4 class="text-center" id="footer-text">AN APP BY EMILY BLANCHETT</h4>
   </footer>
   </div>
-  </div>
   </main>
   
    <!-- Scripts -->
-    <script>
-function showForm() {
-    var x = document.getElementById('formy');
-    if (x.style.display === 'block') {
-        x.style.display = 'none';
-    } else {
-        x.style.display = 'block';
-    }
-}
-</script>
+  
     
       <!--Load Angular-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
