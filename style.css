@@ -95,3 +95,13 @@ a.homebtn:hover{
 li{
    list-style-type: none;
 }
+
+#addplayer{
+  display: block;
+    width: 115px;
+    height: 40px;
+    background: indianred;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
