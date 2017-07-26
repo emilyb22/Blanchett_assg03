@@ -96,7 +96,7 @@ li{
    list-style-type: none;
 }
 
-#addplayer{
+.addplayer{
   display: block;
     width: 115px;
     height: 40px;

@@ -1,5 +1,5 @@
 
- <p>Add a new player!</p>
+<h4>Add a new player!</h4>
      
      <form name="formy" ng-submit="addPlayer()" id="formy" style="width:50%; margin: auto; margin-bottom:10px;" >
      <input type="text" class="form-control" placeholder="Name" ng-model="newPlayer.name" style="margin-bottom:10px;" required>
@@ -7,8 +7,9 @@
      <input type="text" class="form-control" placeholder="Draft" ng-model="newPlayer.draft" style="margin-bottom:10px;" required>
      <input type="text" class="form-control" placeholder="Birthday" ng-model="newPlayer.birthday" style="margin-bottom:10px;" required>
      <input type="text" class="form-control" placeholder="Birthplace" ng-model="newPlayer.birthplace" style="margin-bottom:10px;" required>
-     <input ng-disabled="formy.$invalid" type="submit" value="Add" class="btn"> </form>
+     <input ng-disabled="formy.$invalid" type="submit" value="Add" class="btn"> 
+     <a href="/#!/" class="btn">Cancel</a>
      
-     
+     </form>
 
 
